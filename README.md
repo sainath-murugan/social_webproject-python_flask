@@ -5,6 +5,6 @@ Project plato is a python web development project done with flask library, the s
 I have used bootstap, css, javascript, fontawesome and some other extension to design frontend and backend is completely developed by python.
 Read below to know more
 
-#Features in this website
-..*h
+# Features in this website
+..* h
 

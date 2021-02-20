@@ -223,7 +223,7 @@ def update_account():
 ```
 If the user is trying to update his profile picture, I have used `OS` module in python to create a seperate directory for him to store his profile pic. The directory is created automatically by `OS` module in the name of the current user's username and the profile pic address is stored in database. so python crabs the address from the database and displays the  profile in the website.
 
-The important think to be noticed is, that the profile pic directory is created in the name of the current user's username. so, whenever the user updates his username, the database will commit the change. so the current user's directory name also to be updated. so I have also developed the code for that, whenever the user change his username his directories name is also changed. This technique is used in post also, `OS` creates a seperate folder for the user to store the post. The image's size to be stored in server need to be reduced, it is done by `PIL` Library in python.
+The important think to be noticed is, that the profile pic directory is created in the name of the current user's username. so, whenever the user updates his username, the database will commit the change. so the current user's directory name also to be updated. so I have also developed the code for that, whenever the user change his username his directory's name is also changed. This technique is used in post also, `OS` creates a seperate folder for the user to store the post. The image size to be stored in server need to be reduced, it is done by `PIL` Library in python.
 
   ```python
   {% if post.author.image_file ==  "/static/profile_pics/common_dp/common.jpg" %}

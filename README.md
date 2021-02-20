@@ -155,7 +155,7 @@ After changing the password the `hashed` data of the password is stored in datab
  ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/password%20Reset_page.JPG)
  
  # Backend Works
- Backend is always a technical field to concentrate while develop a website. In plato i have increased some features in backend proccessing to manage the website easily for the administrator
+ Backend is always a technical field to concentrate while develop a website. In plato i have increased some features in backend processing to manage the website easily for the administrator
  
  
  ```python

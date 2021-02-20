@@ -17,4 +17,7 @@ Read below to know more :point_down:
 # Secured Registeration
 
 ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/register.JPG)
-Python's flask extension gives a great capability to manage login and register page
+
+![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/login_fail.JPG)
+
+Python's flask extension gives a great capability to manage login and register page. I have used `Flask-WTF` to manage login and register forms. The `wtforms.validators` module in `wtforms` provides Classes like `DataRequired`, `Length`, `Email`, `EqualTo` and `ValidationError` to manage forms. The classes checks for valid username, Email and password in forms and gives alert for the user if there is any validation error. 

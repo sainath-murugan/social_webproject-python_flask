@@ -1,0 +1,37 @@
+body {
+    background: #fafafa;
+    color: #333333;
+   
+  }
+ 
+
+.bg-steel {
+    background-color: #5f788a;
+  }
+  
+ 
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+     
+  }
+  
+
+.article-content {
+    white-space: pre-line;
+    
+  }
+  
+
+  
+.article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+
+  

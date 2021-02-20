@@ -1,0 +1,147 @@
+body {
+    background: #fafafa;
+    color: #333333;
+   
+  }
+ 
+h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+  }
+  
+.bg-steel {
+    background-color: #5f788a;
+  }
+  
+
+  
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    
+    
+  }
+  
+.article-title {
+    color: #444444;
+  }
+  
+a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+  }
+  
+.article-content {
+    white-space: pre-line;
+    
+  }
+  
+.article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+    
+  }
+  
+.article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+  }
+  
+.article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+  
+.article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+  
+.account-heading {
+    font-size: 2.5rem;
+  }
+.post-image{
+  padding-left: 14%;
+}
+.dropdown{
+    display:inline-block;
+    position:relative;
+    padding-right: 5%;
+  }
+  
+  .dropdown {
+    border:none;
+    padding:8px 16px;
+    background-color:white;
+    color:black;
+    transition:.3s;
+    cursor:pointer;
+    outline: none;
+  }
+  
+  .dropdown:hover {
+    background-color:white;
+    outline: none;
+    color:#38d39f;
+  }
+  
+  .dropdown div{
+    background-color:#fff;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+    z-index:1;
+    visibility:hidden;
+    position:absolute;
+    min-width:100%;
+    opacity:0;
+    transition:.3s;
+  }
+  
+  .dropdown:hover div{
+    visibility:visible;
+    opacity:1;
+  }
+  
+  .dropdown div a, input{
+    display:block;
+    text-decoration:none;
+    padding:8px;
+    color:#000;
+    transition:.1s;
+    white-space:nowrap;
+   
+    border: none;
+    
+  }
+  
+  .dropdown div a:hover{
+    background-color:#38d39f;
+    color:#fff;
+  }
+ .dropdown div input:hover{
+    background-color:#38d39f;
+    color:#fff;
+    border:none;
+    outline: none;
+  }
+  #profile{
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       width: 30%;
+       border-radius: 50%;
+       border: 1px solid #ddd;
+       height:30%;
+  }
+  

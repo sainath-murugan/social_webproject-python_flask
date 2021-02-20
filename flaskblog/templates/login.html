@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>login</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}" />
+
+</head>
+
+<body>
+	
+{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+		{% for category, message in messages %}
+			{% if category == "info" %}
+			<br><br>
+			    <div id="message">
+		       	    {{ message }}
+				</div>
+			{% endif %}
+	   {% endfor %}
+   {% endif %}
+{% endwith %}
+
+  
+	<img class="wave" src="../static/img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="../static/img/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="" method="POST">
+				{{ form.hidden_tag() }}
+				<img src="../static/img/avatar.svg">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+							<br>
+							<br>
+							<br>
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="input") }}
+                    {% endif %}  
+           		   </div>
+           		</div>
+				   <br>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+							<br>
+							<br>
+							<br>
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="input") }}
+                    {% endif %}  
+            	   </div>
+            	</div>
+            	<a href="{{ url_for('reset_request') }}">Forgot Password?</a>
+				{{ form.submit(class="btn btn-outline-info")}}
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="../static/login.js"></script>
+</body>
+
+</html>

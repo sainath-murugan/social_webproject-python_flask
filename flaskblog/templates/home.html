@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block head %} 
+<link href="http://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}"> 
+
+{% endblock %}
+{% block body %}
+
+
+    {% for post in posts.items %}
+        <br> <!--this post variable in database has a connection with usermixin that allows only the database variable in the file-->
+        <article class="media content-section">
+           
+            <!--priority in if condition-->
+            {% if post.author.image_file ==  "/static/profile_pics/common_dp/common.jpg" %}
+              <img id="image" class="rounded-circle article-img"  src="{{  url_for('static', filename='profile_pics/common_dp/common.jpg') }}">           
+            {% elif post.author.image_file ==  "common.jpg" %}
+              <img id="image" class="rounded-circle article-img"  src="{{  url_for('static', filename='profile_pics/common_dp/common.jpg') }}">    
+            {% elif post.author.image_file %}
+              <img id="image" class="rounded-circle article-img"  src="{{  url_for('static', filename='profile_pics/'+ post.author.username + '/'+  post.author.image_file) }}">
+            {% endif %}
+            
+            <div class="media-body">
+             
+                <div class="article-metadata">
+                  
+                    <div class="inside">
+                      <a id="name" class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                      <small class="text-muted">{{ post.date_posted.strftime("%d-%m-%Y")}}</small>                        
+                    </div>                      
+                 </div>
+                 <p class="article-content">{{ post.content }}</p>  
+                 
+                {% if post.post_image %}
+                 <div class="post-image">
+                     <img id="post-image" src="{{ url_for('static', filename='post_picture/'+ post.author.username + '/' + post.post_image)}}" class="figure-img img-fluid rounded" alt="image">
+                 </div>
+                {% else %}
+                    {{ pass }}
+                {% endif %}
+                 <br>
+                <a id="like" class="like">
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                </a>
+            </div>
+          </article>
+         
+{% endfor %}
+  {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+     {% if page_num %}
+         {% if posts.page == page_num %}
+             <a class="btn btn-info mb4" href="{{ url_for('home', page=page_num )}}">{{ page_num }}</a>
+         {% else %}
+             <a class="btn btn-outline-info mb4" href="{{ url_for('home', page=page_num )}}">{{ page_num }}</a>
+         {% endif %}
+     {% else %}
+        ...
+     {% endif %}
+   {% endfor %}
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <script>
+     $(document).ready(function(){
+         $(".like").click(function(){
+            $(this).toggleClass("heart");
+         });
+     });
+   </script>
+{% endblock %}
+
+

@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link href="http://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}">   
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="title">
+            Register Here
+        </div>
+        <div class="social_media">
+            <div class="item">
+                <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="item">
+                <i class="fab fa-twitter"></i>
+            </div>
+            <div class="item">
+                <i class="fab fa-google-plus-g"></i>
+            </div>
+        </div>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form">                 
+                <div class="input_field">
+                    {{ form.password.label(class="form-control-label") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="input") }}
+                    {% endif %}                   
+                </div>
+                <div class="input_field">
+                    {{ form.confirm_password.label(class="form-control-label")}}
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.confirm_password.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password(class="input") }}
+                    {% endif %}       
+                </div>
+                <div id="button">
+                    {{ form.submit(class="btn btn-outline-info")}}
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

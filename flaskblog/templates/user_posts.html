@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block head %}  
+<link rel="stylesheet" href="{{url_for('static', filename='css/user_posts.css')}}" />
+     
+
+{% endblock %}
+
+{% block body %} 
+   {% if user.image_file ==  "/static/profile_pics/common_dp/common.jpg" %}
+       <img id="profile" class="img-fluid" alt="image"   src="{{  url_for('static', filename='profile_pics/common_dp/common.jpg') }}">           
+   {% elif user.image_file ==  "common.jpg" %}
+       <img id="profile" class="img-thumbnail" alt="image"  src="{{  url_for('static', filename='profile_pics/common_dp/common.jpg') }}">    
+   {% elif user.image_file %}
+       <img id="profile" class="img-thumbnail" alt="image"  src="{{  url_for('static', filename='profile_pics/'+ user.username + '/'+  user.image_file) }}">
+   {% endif %}
+   <h1 class="mb-3">{{ user.username }}  - <span id="post">Total posts: {{ posts.total }}</span></h1> <!--total is a pagination object-->
+   {% for post in posts.items %} <!--we are using .items bcoz it is a pagination object-->
+       <article class="media content-section">
+        {% if post.author.image_file ==  "/static/profile_pics/common_dp/common.jpg" %}
+              <img id="image" class="rounded-circle article-img"  src="{{  url_for('static', filename='profile_pics/common_dp/common.jpg') }}">           
+        {% elif post.author.image_file ==  "common.jpg" %}
+              <img id="image" class="rounded-circle article-img"  src="{{  url_for('static', filename='profile_pics/common_dp/common.jpg') }}">    
+        {% elif post.author.image_file %}
+              <img id="image" class="rounded-circle article-img"  src="{{  url_for('static', filename='profile_pics/'+ post.author.username + '/'+  post.author.image_file) }}">
+        {% endif %}
+        <!--there is some link between current_user and database-->
+        {% if post.author == current_user %}
+        <div class="dropdown">
+            <p>. . .</p>
+          <div>
+            <a href="{{ url_for('edit', post_id=post.id) }}">edit</a>
+            <form action="{{ url_for('delete', post_id=post.id) }}" method="POST">
+               <input id="delete" type="submit" value="delete"></input>
+            </form>
+          </div>
+       </div>
+    {% else %}
+        {{ pass }}
+    {% endif %}
+     
+           <div class="media-body">
+               <div class="article-metadata">
+                   <div class="inside">
+                    <a id="name" class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                    <small class="text-muted">{{ post.date_posted.strftime("%Y-%m-%d") }}</small>    
+                   </div>                            
+               </div>
+               <p class="article-content">{{ post.content}}</p>
+               {% if post.post_image %}
+               <div class="post-image">
+                   <img id="post-image" src="{{ url_for('static', filename='post_picture/'+ post.author.username + '/' + post.post_image)}}" class="figure-img img-fluid rounded" alt="image">
+               </div>
+              {% else %}
+                  {{ pass }}
+              {% endif %}
+           </div>
+       </article>
+    {% endfor %}
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=1) %}
+        {% if page_num %}
+           {% if posts.page == page_num %}
+                <a class="btn btn-info mb-4" href="{{ url_for('user_posts', username=user.username, page=page_num) }}">{{ page_num }}</a>
+           {% else %}
+                <a class="btn btn-outline-info mb-4" href="{{ url_for('user_posts', username=user.username, page=page_num) }}">{{ page_num }}</a>
+           {% endif %}
+        {% else %}
+            ...
+        {% endif %}
+    {% endfor %}
+{% endblock %}

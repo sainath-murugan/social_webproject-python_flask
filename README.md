@@ -239,5 +239,9 @@ The important think to be noticed is, that the profile pic directory is created 
  # seperate folder for Profile
   ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/post%20file.JPG)
   
+  # Post 
   
-
+  The user can post image and content seperatley, the image file posted is displayed by some `Bootstrap class`, to align it correctly
+  
+   ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/home.JPG)
+   ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/home_image.JPG)

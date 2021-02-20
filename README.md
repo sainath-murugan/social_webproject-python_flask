@@ -245,3 +245,19 @@ The important think to be noticed is, that the profile pic directory is created 
   
    ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/home.JPG)
    ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/home_image.JPG)
+   
+   
+   # File allowed
+   
+  ```python
+   class PostForm(FlaskForm):
+
+    content = TextAreaField("write something", validators=[DataRequired()])
+    post_image = FileField(validators=[FileAllowed(["jpg", "png"])])
+    submit = SubmitField("Post")
+  ```
+   With the help of `FileAllowed` class in `flask_wtf.file` extension, It only `png` and `JPG` files to be uploaded by the users, if other files are tried to uploded by the user it will show the error message in the browser.
+   
+   ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/file_allowed.JPG)
+   
+   

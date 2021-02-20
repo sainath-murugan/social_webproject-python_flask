@@ -8,8 +8,8 @@ from flask_mail import Mail
 
 app = Flask(__name__)
 
-app.config["SECRET_KEY"] = "11c07514a6d98364ac6f129d49cf7e57"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///userdata.db"
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("SQLALCHEMY_DATABASE_URI")
 app.config["SQLALCHEMY_ECHO"] = False
 app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days=365)
 app.config["REMEMBER_COOKIE_NAME"] = "6f7g8fdn4g9h6gtt74fhb8gh648th"
@@ -27,8 +27,8 @@ login_manager.login_message_category = "info"
 app.config["MAIL_SERVER"] = "smtp.googlemail.com"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USERNAME"] = "demoappflask@gmail.com"
-app.config["MAIL_PASSWORD"] = "demo@flask"
+app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
 mail = Mail(app)
 
 

@@ -11,7 +11,7 @@ Read below to know more :point_down:
 * User account security
 * features in account page
 * User post accessibility
-* Password reset capability bt email
+* Password reset capability by email
 * Backend works
 
 # Secured Registeration

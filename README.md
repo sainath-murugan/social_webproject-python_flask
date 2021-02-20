@@ -6,5 +6,5 @@ I have used bootstap, css, javascript, fontawesome and some other extension to d
 Read below to know more
 
 #Features in this website
-..* h
+..*h
 

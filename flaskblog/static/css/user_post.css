@@ -144,4 +144,18 @@ a.article-title:hover {
        border: 1px solid #ddd;
        height:30%;
   }
+ #like{
+    color: #a7979730;
+    font-size: 2em;
+    padding-left: 5%;
+  }
+  .heart i.fa-heart{
+    color: #f44336;
+  }
+  .heart{
+    animation: heart 0.5s linear;
+  }
+  *{
+    box-sizing: border-box;
+  }  
   

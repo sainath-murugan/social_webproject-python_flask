@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 
 {% block head %}  
-<link rel="stylesheet" href="{{url_for('static', filename='css/user_posts.css')}}" />
-     
+<link rel="stylesheet" href="{{url_for('static', filename='css/user_post.css')}}" />
+<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">    
 
 {% endblock %}
 
@@ -54,6 +54,9 @@
               {% else %}
                   {{ pass }}
               {% endif %}
+              <a id="like" class="like">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </a>
            </div>
        </article>
     {% endfor %}
@@ -68,4 +71,12 @@
             ...
         {% endif %}
     {% endfor %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $(".like").click(function(){
+             $(this).toggleClass("heart");
+          });
+      });
+    </script>
 {% endblock %}

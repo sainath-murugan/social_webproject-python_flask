@@ -29,4 +29,10 @@ Python's flask extension gives a great capability to manage login and register p
  user's account security is one of the important thing to manage.  Flask library gives the flexibility to manage it. I have used `Bcrypt` class in `flask_bcrypt` to store the `hash` value of the password in the database. so, the user's password can't be access by anybody in the database.
  
  ```python
+  if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
+        user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+        db.session.add(user)
+        db.session.commit()
+ ```
  

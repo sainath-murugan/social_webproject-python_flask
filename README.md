@@ -36,3 +36,12 @@ Python's flask extension gives a great capability to manage login and register p
         db.session.commit()
  ```
  
+ # features in account page
+ 
+ ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/account.JPG)
+ 
+  As it was a clone of social website i have developed some specification in user account page to increase the accessibilty to user.
+  The account page dispalys the last visit of the user in the website and also displays the total post posted by the user in the current account. 
+ ```python
+    last_login =  datetime.now().strftime("%d-%m-%Y %I:%M:%S-%p")
+ ```

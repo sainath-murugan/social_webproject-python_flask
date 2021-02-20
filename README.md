@@ -154,7 +154,7 @@ After changing the password the `hashed` data of the password is stored in datab
  ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/password%20Reset.JPG)
  ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/password%20Reset_page.JPG)
  
- # Backend Word
+ # Backend Works
  Backend is always a technical field to concentrate while develop a website. In plato i have increased some features in backend proccessing to manage the website easily for the administrator
  
  
@@ -221,9 +221,9 @@ def update_account():
        image_file = url_for("static", filename="profile_pics/"+ f"{str(current_user.username)}/" + current_user.image_file)
        return render_template("update_account.html", form=form, image_file=image_file)
 ```
-If the user is trying to update his profile picture, I have used `OS` module in python to create a seperate directory for him to store his profile pic. The directory is created automatically by `OS` module in the name of the current user and the profile pic address is stored in database. so python crabs the address from the database and displays the  profile in the website.
+If the user is trying to update his profile picture, I have used `OS` module in python to create a seperate directory for him to store his profile pic. The directory is created automatically by `OS` module in the name of the current user's username and the profile pic address is stored in database. so python crabs the address from the database and displays the  profile in the website.
 
-The important think to be noticed is, that the profile pic directory is created in the name of the current user's username. so, whenever the user updates his username, the database will commit the change. so the current user directory name also to be updated. so I have also developed the code for that, whenever the user change his username his directories name is also changed. This technique is used in post also, `OS` creates a seperate folder for the user to store the post. The image"s size to be stored in server need to be reduced, it is done by `PIL` Library in python 
+The important think to be noticed is, that the profile pic directory is created in the name of the current user's username. so, whenever the user updates his username, the database will commit the change. so the current user's directory name also to be updated. so I have also developed the code for that, whenever the user change his username his directories name is also changed. This technique is used in post also, `OS` creates a seperate folder for the user to store the post. The image's size to be stored in server need to be reduced, it is done by `PIL` Library in python.
 
   ```python
   {% if post.author.image_file ==  "/static/profile_pics/common_dp/common.jpg" %}
@@ -234,6 +234,10 @@ The important think to be noticed is, that the profile pic directory is created 
               <img id="image" class="rounded-circle article-img"  src="{{  url_for('static', filename='profile_pics/'+ post.author.username + '/'+  post.author.image_file) }}">
             {% endif %}
  ```           
+ # seperate folder for post
   ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/post%20data.JPG)
+ # seperate folder for Profile
   ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/post%20file.JPG)
+  
+  
 

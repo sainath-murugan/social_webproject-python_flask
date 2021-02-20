@@ -20,4 +20,13 @@ Read below to know more :point_down:
 
 ![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/login_fail.JPG)
 
-Python's flask extension gives a great capability to manage login and register page. I have used `Flask-WTF` to manage login and register forms. The `wtforms.validators` module in `wtforms` provides Classes like `DataRequired`, `Length`, `Email`, `EqualTo` and `ValidationError` to manage forms. The classes checks for valid username, Email and password in forms and gives alert for the user if there is any validation error. 
+Python's flask extension gives a great capability to manage login and register page. I have used `Flask-WTF` to manage login and register forms and `Flask-WTF` protects the login and register page from `CSRF` attack by using `hidden_tag()` feature. The `wtforms.validators` module in `wtforms` provides Classes like `DataRequired`, `Length`, `Email`, `EqualTo` and `ValidationError` to manage forms. The classes checks for valid username, Email and password in forms and gives alert for the user if there is any validation error. 
+
+# User account security
+
+![alt text](https://github.com/sainath-murugan/social_webproject-python_flask/blob/main/plato/database.JPG)
+
+ user's account security is one of the important thing to manage.  Flask library gives the flexibility to manage it. I have used `Bcrypt` class in `flask_bcrypt` to store the `hash` value of the password in the database. so, the user's password can't be access by anybody in the database.
+ 
+ ```python
+ 

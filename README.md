@@ -118,9 +118,9 @@ def delete(post_id):
 ```
 
 
-If the current user tries to edit or delete the other user's post, the website will throw a 403 forbidden error in browser. This specification can be achived by `abort` function in flask. so the users post in the database can be secured
+If the current user tries to edit or delete the other user's post, the website will throw a 403 forbidden error in browser. This specification can be achived by `abort` function in flask. so the user's post in the database can be secured
 
-# Password reset capability bt email
+# Password reset capability by email
 At any time the user can forgot his/her password so, the password reseting capability is developed in this project. `flask_mail` library provides `Mail` class it is used to send automatic mail from the server.
 
 ```python

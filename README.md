@@ -6,5 +6,11 @@ I have used bootstap, css, javascript, fontawesome and some other extension to d
 Read below to know more
 
 # Features in this website
-..* h
+
+* Secured registeration and Login
+* User account security
+* features in account page
+* User post accessibility
+* Password reset capability bt email
+* Backend works
 
